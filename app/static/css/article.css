@@ -1,0 +1,270 @@
+body {
+    font-family: 'Open Sans Condensed';
+}
+
+.block {
+    height: 20rem;
+    font-size: 1.5em;
+    padding-left: 0;
+    padding-right: 0;
+    // position: relative;
+    color: white;
+}
+
+.block-text {
+    padding-left: 0.5em;
+    padding-right:0.5em;
+    bottom: 0em;
+    font-family: 'Open Sans Condensed';
+    // position: absolute;
+    color: black;
+    // background-color: rgba(0, 0, 0, 0.5);
+    height: 5em;
+    width: 100%;
+}
+
+.cover {
+    position: relative;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    color: black;
+    margin-bottom: 1em;
+    background-color: white !important;
+}
+
+.cover-text {
+    bottom: 0em;
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: auto; /* magic number */
+    right: 10rem;
+    padding-left: 1em;
+    left: 10rem;
+
+    font-size: 2em;
+    height: 3em;
+}
+
+.dark-text {
+    color: #000;
+}
+
+.cover-img {
+    object-fit: cover;
+    width: 100%;
+    height: 30rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.block-img {
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+}
+
+.wrapper {
+    margin-top: 5.25rem; /* magic number, do something legit later */
+    bottom: 40%;
+}
+
+#big-circle-thing {
+    margin: auto;
+    margin-top: 5%;
+    height: 90%;
+    width: 90%;
+    border-radius: 100%;
+    background-color:#ffffff;
+    font-size: 3em;
+    padding-top: 35%;
+    color: #000000;
+    left: auto;
+    right: auto;
+}
+
+#circle-wrapper {
+    // margin-left: 0em;
+    max-height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #333,
+        #333 5px,
+        #222 5px,
+        #222 10px
+    );
+}
+
+#cent {
+    border-color: #000000;
+    border-left: 3px;
+    border-right: 3px;
+    color: black;
+    font-size: 2em;
+    border: 1px !important;
+}
+
+#about {
+    background: repeating-linear-gradient(
+        45deg,
+        #606dbc,
+        #606dbc 10px,
+        #465298 10px,
+        #465298 20px
+    );
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: ;
+    // border-radius: 0.5em;
+}
+
+.dropdown-menu-item {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.dropdown-menu-item a:hover {
+    text-decoration: none;
+}
+
+.dropdown a{
+    color: black !important;
+}
+
+.content-row {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.block-intro {
+    font-size: 1rem;
+}
+
+.header-custom {
+    margin-bottom: 1.5em;
+    font-size: 1.25em;
+    margin-top: 1.5em;
+}
+
+#navbarNav3 {
+    margin-right: 10rem;
+}
+
+#navbar-img {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.navbar-brand {
+    margin-left: 10rem;
+    left: 0;
+}
+
+.navbar {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#navbar-container {
+    min-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+}
+
+.col-fill-8 {
+    width: 66%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+img + em{
+    font-size: 0.8em;
+    display: block;
+    text-align: center;
+}
+
+#markdown img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+}
+
+.navbar-toggler i {
+    color: #EEEEEE;
+}
+
+.author {
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+}
+
+.fdb-block .fdb-box {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.author-container {
+    margin-right: 0;
+}
+
+.author-info {
+    border: 1em;
+    border-color: #999999;
+}
+
+#content {
+    margin-top: 55vh;
+    color: #FFFFFF;
+}
+
+#markdown {
+    margin-top: 2em;
+    font-family: "Roboto";
+    font-weight: 200;
+    text-align: justify;
+}
+
+#markdown p {
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+#markdown p:first-child:first-letter {
+    float: left;
+    font-size: 3em;
+    margin-right: 0.25rem;
+    margin-top: 0.5rem;
+    font-family: "Libre Baskerville";
+}
+
+h1 {
+    font-family: "Libre Baskerville";
+}
+h2 {
+    font-family: "Libre Baskerville";
+}
+h3 {
+    font-family: "Libre Baskerville";
+}
+h4 {
+    font-family: "Libre Baskerville";
+}
+h5 {
+    font-family: "Libre Baskerville";
+}
+h6 {
+    font-family: "Libre Baskerville";
+}

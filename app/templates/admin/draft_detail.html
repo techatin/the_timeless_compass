@@ -1,0 +1,83 @@
+{% extends "admin/base.html" %}
+{% block content %}
+
+    <link rel="stylesheet" href="/static/editor/css/editormd.min.css" />
+    <script src="/static/editor/editormd.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var editor = editormd("editormd", {
+            tex: true,
+
+            path : "/static/editor/lib/", // Autoload modules mode, codemirror, marked... dependents libs path
+            // lang: "en-uk"
+            readOnly: {{read_only|tojson}},
+            onload: function() {
+                {% if read_only %}
+                editor.previewing();
+                console.log("HI");
+                {% endif %}
+            }
+        });
+
+        console.log('{{ fp | safe }}');
+
+        $.ajax({
+            url: '{{ fp | safe }}',
+            type: 'get',
+            dataType: 'text',
+            cache: false,
+            success: function(data, textStatus, xhr) {
+                // console.log(xhr.status);
+                // console.log(xhr.getResponseHeader("Last-Modified"));
+                $('#main-content').val(data);
+            }
+        });
+
+        $('#save').click(function() {
+            var content = $('#main-content').val();
+            // alert(content);
+            // alert(content.replace(/\r?\n/g,'<br/>'));
+            $('#hidden-field').val($('#main-content').val());
+            // alert($('#hidden-field').val());
+            // alert($('#hidden-field').val());
+        });
+        $('form').submit(function() {
+            // e.preventDefault();
+            // alert('attempt made');
+            return true;
+        });
+    });
+    </script>
+
+    <style>
+        .no-display {
+            display: none;
+        }
+
+        #editormd {
+            min-height: 50em;
+        }
+    </style>
+
+    {% if read_only %}
+    <div class="pl-5">
+        <h3>Reviewing draft</h3>
+        <hr>
+    </div>
+    {% endif %}
+
+    <div id="editormd">
+        <textarea id="main-content"></textarea>
+    </div>
+
+    {% if not read_only %}
+    <form action="{{ url_for('admin.draft_view', art_id=art_id, draft_id=draft_id) }}" method="post" name="content" class="form-group col-md-8 col-md-offset-2">
+        <fieldset>
+            {{ form.hidden_tag() }} {{ form.file_content(class="no-display main-form form-control", placeholder="Username", id="hidden-field") }}
+            <p><input id="save" type="submit" value="Save" class="btn btn-primary"></p>
+        </fieldset>
+    </form>
+    {% endif %}
+
+{% endblock %}

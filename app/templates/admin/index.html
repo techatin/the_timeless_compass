@@ -1,0 +1,348 @@
+{% extends "admin/base.html" %}
+{% block content %}
+
+<script>
+
+function loadContent(selector) {
+    $('#load-on-click').html($(selector).html());
+}
+
+function make_post_request(url) {
+    $.POST(url);
+}
+
+function delete_tag(art_id, cat_id) {
+    var data = {"art_id": art_id, "cat_id": cat_id};
+
+    if(confirm("Do you really want to delete this category for your article?")){
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', "{{ url_for('admin.remove_category') }}", true);
+        xhr.onload = function (e) {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // console.log(xhr.responseText);
+                } else {
+                    // console.error(xhr.statusText);
+                }
+                location.reload();
+            }
+        };
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        // send the collected data as JSON
+        xhr.send(JSON.stringify(data));
+    }
+}
+
+function update_status(art_id) {
+
+    var data = {
+        "art_id": art_id,
+        "is_carousel": $('#carousel_'+String(art_id)).is(":checked"),
+        "is_index": $('#index_'+String(art_id)).is(":checked")
+    }
+
+    console.log(data);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "{{ url_for('admin.update_article_disp') }}", true);
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // console.log(xhr.responseText);
+            } else {
+                // console.error(xhr.statusText);
+            }
+            location.reload();
+        }
+    };
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    // send the collected data as JSON
+    xhr.send(JSON.stringify(data));
+}
+
+$(document).ready(function () {
+    loadContent('#default');
+});
+
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-3 col-3 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <h5> My Articles </h5>
+                </li>
+                {% if (g.user.articles) %}
+                {% for article in g.user.articles %}
+                    <li class="nav-item nowrap">
+                        <a class="nav-link" href="#" onclick="loadContent('#{{article.folder}}')"> {{article.title}} </a>
+                    </li>
+                {% endfor %}
+                {% else %}
+                <li class="nav-item">
+                    You have no articles
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('admin.new_article') }}"> <i class="fa fa-plus" aria-hidden="true"></i>
+New Article </a>
+                </li>
+            </ul>
+
+            {% if (g.user.permission < 2) %}
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <h5> Manage Articles </h5>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadContent('#review')">Review articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadContent('#publish')">Manage published pages </a>
+                </li>
+            </ul>
+            {% endif %}
+
+            {% if (g.user.permission < 1) %}
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <h5> Manage Users </h5>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('admin.new_user') }}">Add users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Edit users</a>
+                </li>
+
+            </ul>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <h5> Manage Site </h5>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadContent('#categories')"> Categories </a>
+                </li>
+            </ul>
+            {% endif %}
+        </nav>
+
+        <div class="col-sm-9 col-md-9 col-9" id="load-on-click">
+        </div>
+
+        <div style='display: none;'>
+            <div id="default">
+                <div class="card mt-2">
+                    <div class="card-header">
+                        Welcome!
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Start writing now</h5>
+                        <p class="card-text">Click on any item in the sidebar to start your creative journey.</p>
+                    </div>
+                </div>
+            </div>
+
+            {% for article in g.user.articles %}
+                <div id="{{article.folder}}">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            Details
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">
+                                Created on: {{ article.created.strftime('%d %b %Y %X') }}
+                            </p>
+                            <p class="card-text">
+                                Updated on: {{ article.updated.strftime('%d %b %Y %X') }}
+                            </p>
+                            <p class="card-text">
+                                Current categories: {% for category in article.categories %} <span class="badge badge-info">{{ category.name }}&nbsp;&nbsp;<a class="fa fa-times" href="#" style="color: white;" onclick="delete_tag({{ article.id }}, {{ category.id }})"></a></span>{%endfor%}
+                            </p>
+                            <p class="card-text">
+                                <b>Add category</b>
+                                <form action="{{ url_for('admin.add_category_to_article', art_id=article.id) }}" method="post" name="content" class="form-inline col-md-6 col-md-offset-2">
+                                    <fieldset>
+                                        {{ category_form.hidden_tag() }} {{ category_form.new_category(class="main-form form-control ", placeholder="Add a category", id="hidden-field") }}
+                                        <input id="save" type="submit" value="Add" class="btn btn-primary">
+                                    </fieldset>
+                                </form>
+                            </p>
+                            <p class="card-text">
+                                <b>Add cover image</b>
+                                {% if article.cover_image %}
+                                <a href="{{ article.cover_image }}">Current cover</a>
+                                {% endif %}
+                                <form action="{{ url_for('admin.add_cover', art_id=article.id) }}" method="post" name="url" class="form-inline col-md-6 col-md-offset-2">
+                                    <fieldset>
+                                        {{ cover_form.hidden_tag() }} {{ cover_form.image_url(class="main-form form-control ", placeholder="Link to image") }}
+                                        <input id="save" type="submit" value="Add" class="btn btn-primary">
+                                    </fieldset>
+                                </form>
+                            </p>
+
+                            <p class="card-text">
+                                <b>Add precis</b>
+                                <form action="{{ url_for('admin.add_precis', art_id=article.id) }}" method="post" name="precis" class="form-main col-md-10 col-md-offset-2">
+                                    <fieldset>
+                                        {{ precis_form.hidden_tag() }} {{ precis_form.precis_text(class="main-form form-control", value=article.precis) }}
+                                        <input id="save" type="submit" value="Add" class="btn btn-primary">
+                                    </fieldset>
+                                </form>
+                            </p>
+                            {% if article.drafts %}
+                            <p class="card-text"> You have {{ article.num_draft }} drafts </p>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Draft Number</th>
+                                    <th>Modified on</th>
+                                    <th>Action</th>
+                                </tr>
+                                {% for draft in article.drafts | sort(reverse=True, attribute='revision_number')%}
+                                <tr>
+                                    <td>{{ draft.revision_number }}</td>
+                                    <td>{{ draft.updated.strftime('%d %b %Y %X') }}</td>
+                                    <td>
+                                        <a href="{{ url_for('admin.draft_view', art_id=article.id, draft_id=draft.id) }}" class="btn btn-primary" role="button">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        </a>
+                                        <form action="{{ url_for('admin.send_to_editor', art_id=article.id, draft_id=draft.id) }}" method="post">
+                                            <button class="btn btn-primary"> Send to editor </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+                            </table>
+                            <form action="{{ url_for('admin.new_draft', art_id=article.id) }}" method="post">
+                                <button class="btn btn-primary"> New Draft </button>
+                            </form>
+                            <form action="{{ url_for('admin.delete_article', art_id=article.id) }}" method="post" class="mt-2">
+                                <button class="btn btn-danger"> Delete Article </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div style='display: none;'>
+            <div id="review">
+                <div class="card mt-2">
+                    <div class="card-header">
+                        Review Articles
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Draft</th>
+                                <th>Modified on</th>
+                                <th>Action</th>
+                            </tr>
+                            {% for draft in for_review | sort(reverse=True, attribute='updated')%}
+                            <tr>
+                                <td>{{ draft.article.folder}} draft {{ draft.revision_number }}</td>
+                                <td>{{ draft.updated.strftime('%d %b %Y %X') }}</td>
+                                <td>
+                                    <a href="{{ url_for('admin.draft_view_readonly', art_id=draft.article.id, draft_id=draft.id) }}" class="btn btn-primary" role="button">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </a>
+                                    <form action="{{ url_for('admin.publish', art_id=draft.article.id, draft_id=draft.id) }}" method="post">
+                                        <button class="btn btn-primary"> Publish </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style='display: none;'>
+            <div id="categories">
+                <div class="card mt-2">
+                    <div class="card-header">
+                        Manage Categories
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td><a href="{{ url_for('admin.new_category') }}"> New category </a></td>
+                            </tr>
+                            {% for category in categories %}
+                            <tr>
+                                <td>{{ category.name }}</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary" role="button">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style='display: none;'>
+            <div id="publish">
+                <div class="card mt-2">
+                    <div class="card-header">
+                        Manage published drafts
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Name</th>
+                                <th>Precis</th>
+                                <th>Cover Image</th>
+                                <th>On Carousel</th>
+                                <th>On Front Page</th>
+                                <th>Action</th>
+                            </tr>
+                            {% for article in published_articles %}
+                            <tr>
+                                <td>{{ article.title }}</td>
+                                <td>{{ article.precis }}</td>
+                                <td>
+                                    {% if article.cover_image %}
+                                    <a href="{{ article.cover_image }}">View</a>
+                                    {% else %}
+                                    <p>None</p>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if article.is_carousel %}
+                                    <input type="checkbox" id="carousel_{{article.id}}" checked></input>
+                                    {% else %}
+                                    <input type="checkbox" id="carousel_{{article.id}}"></input>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if article.is_index %}
+                                    <input type="checkbox" id="index_{{article.id}}" checked></input>
+                                    {% else %}
+                                    <input type="checkbox" id="index_{{article.id}}"></input>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="update_status({{ article.id }})"><a href="#" style="color: white;">update</a></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

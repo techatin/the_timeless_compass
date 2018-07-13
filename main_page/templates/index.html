@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/try.js"></script>
+    <script>
+        $('#feature').carousel({
+            interval: 5000
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">The Timeless Compass</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <div class="wrapper">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="wrapper">
+                        <a class="nav-link" href="#">About</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="categories" aria-expanded="false">Categories<span class="caret"></span></a>
+
+                        <ul class="dropdown-menu" aria-labelledby="categories">
+                            <li class="dropdown-menu-item">
+                                <div class="wrapper1">
+                                    <a class="nav-link" href="#">Politics and Current Affairs</a>
+                                </div>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <div class="wrapper1">
+                                    <a class="nav-link" href="#">Lifestyle</a>
+                                </div>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <div class="wrapper1">
+                                    <a class="nav-link" href="#">Pop Culture</a>
+                                </div>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <div class="wrapper1">
+                                    <a class="nav-link" href="#">Literature and Philosophy</a>
+                                </div>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <div class="wrapper1">
+                                    <a class="nav-link" href="#">Regions</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" placeholder="Search" type="text">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div id="headline" class="carousel slide d-none d-md-block" data-ride="carousel" data-interval="6000">
+        <ol class="carousel-indicators">
+            <li onclick="$('#headline').carousel(0)" class="active"></li>
+            <li onclick="$('#headline').carousel(1)"></li>
+            <li onclick="$('#headline').carousel(2)"></li>
+            <li onclick="$('#headline').carousel(3)"></li>
+            <li onclick="$('#headline').carousel(4)"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block img-fluid" src="../static/img/carousel_1.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>Stay of Execution: The Variola And Its Implications On The World</h4>
+                    <hr>
+                    <p>Evaluating the merits of smallpox research in today's world</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid image" src="../static/img/carousel_2.png" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>UN Day 2017</h4>
+                    <hr>
+                    <p>The evolving power and unity of the United Nations</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid image" src="../static/img/carousel_3.jpeg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>The Name&#39;s Bond &#8211; James, Bonded to Ideology</h4>
+                    <hr>
+                    <p>Why Bond has escaped the scrutiny of PC - Culture</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid image" src="../static/img/carousel_4.jpeg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>History Repeats Itself: Resemblances of the Han-Minority Dual Structure in Contemporary Chinese Society</h4>
+                    <hr>
+                    <p>Find out how the legacy of the An Lushan Rebellion - one of the deadliest wars in history - lives on in contemporary Chinese society.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid image" src="../static/img/carousel_5.jpeg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>The Bee and the Butterfly</h4>
+                    <hr>
+                    <p>The Politics of the Ali vs. Inoki Fight, examined</p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" onclick="$('#headline').carousel('prev')">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </div>
+            <div class="carousel-btn">
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" onclick="$('#headline').carousel('next')">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="headline" class="container col-sm-12 col-xs-12 d-block d-md-none">
+        <div class="row h-100">
+            <div class="thumbnail text-center">
+                <a href="#"><img src="../static/img/carousel_1.jpg" alt="" class="img-fluid"></a>
+                <div class="caption align-self-center">
+                    <h5>Stay of Execution: The Variola And Its Implications On The World</h5>
+                    <small>Evaluating the merits of smallpox research in today's world</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="thumbnail text-center">
+                <a><img src="../static/img/carousel_2.png" alt="" class="img-fluid"></a>
+                <div class="caption">
+                    <h5>UN Day 2017</h5>
+                    <small>The evolving power and unity of the United Nations</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="thumbnail text-center">
+                <a href="#"><img src="../static/img/carousel_3.jpeg" alt="" class="img-fluid"></a>
+                <div class="caption">
+                    <h5>The Name&#39;s Bond &#8211; James, Bonded to Ideology</h5>
+                    <small>Why Bond has escaped the scrutiny of PC - Culture</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="thumbnail text-center">
+                <a href="#"><img src="../static/img/carousel_4.jpeg" alt="" class="img-fluid"></a>
+                <div class="caption">
+                    <h5>History Repeats Itself</h5>
+                    <small>Resemblances of the Han-Minority Dual Structure in Contemporary Chinese Society</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="thumbnail text-center">
+                <a href="#"><img src="../static/img/carousel_5.jpeg" alt="" class="img-fluid"></a>
+                <div class="caption">
+                    <h5>The Bee and the Butterfly</h5>
+                    <small>The Politics of the Ali vs. Inoki Fight, examined</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" id="featured">
+        <h3>Featured</h3>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top img-thumbnail" src="../static/img/featured_1.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Secrets of the Masquerade</h4>
+                        <p class="card-text"><div class="card-block">We unmask the history behind an age-old Venetian tradition.</div></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top img-thumbnail" src="../static/img/featured_2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Philippines: People&#39;s Power Revolution</h4>
+                        <p class="card-text"><div class="card-block">Find out the real, convoluted history behind the controversy of a state burial for political dictator Ferdinand Marcos.</div></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12" id="copyright" style="text-align: right;">
+                    <p>&copy; 2017 The Timeless Compass</p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <p> Contact us at: thetimlesscompass@gmail.com </p>
+                </div>
+            </row>
+        </div>
+    </footer>
+</body>
+
+</html>

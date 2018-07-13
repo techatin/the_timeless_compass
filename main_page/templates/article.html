@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/theme.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/custom.css" /> -->
+    <!-- Compass by Optimus Prime from the Noun Project -->
+    <link type="text/css" rel="stylesheet" href="../static/css/froala_blocks.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/try.js"></script>
+    <script type="text/javascript" src="../static/js/Markdown.Converter.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+
+        $(document).ready(function() {
+            var txt = $("#markdown").html();
+            var converter = new Markdown.Converter();
+            var htmlContent = converter.makeHtml(txt);
+            $('#markdown').html(htmlContent);
+            console.log("Success");
+        })
+    </script>
+
+    <style>
+        .col-fill-8 {
+            width: 66%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        img + em{
+            font-size: 0.8em;
+            display: block;
+            text-align: center;
+        }
+
+        #markdown img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 70%;
+        }
+
+        .navbar-toggler i {
+            color: #EEEEEE;
+        }
+
+        .author {
+            height: 10em;
+        }
+
+        .author-container {
+            margin-right: 0;
+        }
+
+        .author-info {
+            border: 1em;
+            border-color: #999999;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            background-color: #343a40;
+            // border-radius: 0.5em;
+        }
+
+        .dropdown-menu-item {
+            margin-left: 1em;
+            margin-right: 1em;
+            margin-bottom: 1em;
+        }
+
+        .dropdown-menu-item a:hover {
+            text-decoration: none;
+        }
+
+        .dropdown a{
+            color: #f9f9f9 !important;
+        }
+
+        /*.navbar-brand {
+            max-width: 50%;
+        }
+
+        .navbar-brand img {
+            max-width: 100%;
+            height: auto;
+        }*/
+    </style>
+</head>
+<body>
+
+    <header class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="https://www.froala.com">
+                    <img src="../static/img/ttc2.png" height="50" alt="The Timeless Compass">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav3">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <a id="categories" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-item">
+                                <a href="#">Politics and Current Affairs</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Lifestyle</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Pop Culture</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Literature and Philosophy</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Regions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="fdb-block pb-4" style="background-image: url(../static/img/carousel_1.jpg);">
+      <div class="container">
+        <div class="row text-left justify-content-center">
+          <div class="col-12 col-md-8 col-lg-8">
+            <div class="fdb-box fdb-touch br-0" style="border-bottom: solid 5px #528bff;">
+              <h2><strong>Stay of Execution: The Variola And Its Implications On The World</strong></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-md-8 text-left" id="markdown">
+### The Rise and Fall of Smallpox
+
+The year is 1736. In Russia, one in seven children is dead. Across Europe, 400,000 people are dying every year. The culprit? An ostensibly benign microbe. The variola virus is 250 nanometres in size — 300 times lesser than the thickness of a single human hair. When infected, this innocuous virus causes a disease with an infamous and frightful name — smallpox.
+
+As one of the most devastating plagues in the history of mankind, smallpox was hardly limited to Europe alone. In fact, the Incan Empire crumbled under this debilitating pandemic. Smallpox was everywhere, and only a few isolated islands were spared from the devastation it brought. People worldwide were racked with high fevers and headaches, and displayed the characteristic pustules and abscesses all over their bodies. If victims were lucky, they would escape with severe disfigurement, or permanent blindness. The rest would die.
+
+![A severely disfigured smallpox victim](../static/img/test_article/caption1.jpg)
+*A severely disfigured smallpox victim*
+
+Sixty years later, mankind was saved by an unlikely hero. It was commonly known that milkmaids were generally immune to the virus, but it wasn’t until 1796 when Edward Jenner, an ordinary English doctor, realised the implications of this. These milkmaids occasionally caught a closely related disease from the cows they milked called cowpox, a much milder form of smallpox. Jenner hypothesised that the pus from the cowpox sores granted immunity from smallpox. He tested his theory on his gardener’s son, James Phipps, by inoculating him with cowpox pus. Jenner subsequently exposed Phipps to various forms of variola, but Phipps failed to manifest the disease. The elixir had finally been found.
+
+
+
+Despite initial opposition, this new vaccine gradually caught on and spread from country to country. Vaccination was made mandatory in many countries and one after the other, each nation managed to push the plague out of its borders. With the passage of time came technological advancement and new inventions. This allowed the World Health Organisation (WHO) to launch a global immunisation campaign to get rid of the disease once and for all by 1967.
+
+
+
+On 9 December, 1979, after scouring the planet for any traces of the virus, smallpox was declared “eradicated”. This was formally put into writing in a WHO resolution dated 8 May, 1980, a momentous day for all of humanity —  to this day, smallpox is the only human disease than has ever been eradicated. The variola virus’ reign of terror had come to an end. Or had it?
+
+![](../static/img/test_article/caption2.png)
+*The WHO’s magazine announced the ‘death’ of smallpox, a great victory for medicine, in 1980. However, the truth is that smallpox had yet to be completely exterminated.*
+
+### Not Quite Eradicated...
+
+While the variola virus might have been wiped out from the global population, it would be a mistake to assume that smallpox has completely disappeared from the face of the earth. A laboratory accident occurred in Birmingham that killed a medical photographer on September 11, 1978. In the aftermath, every country in possession of live variola stocks either destroyed them or handed them over to the only two WHO laboratories which had Biosafety Level 4 (BSL-4) facilities. These are the Centre for Disease Control and Prevention (CDC) in U.S.A. and the State Research Center of Virology and Biotechnology (the Vector Institute) in Russia. The stocks are, to this day, still there.
+
+![](../static/img/test_article/caption3.jpg)
+*The only two BSL-4 facilities in the world: The CDC in Atlanta, U.S.A. (bottom), and the Vector Institute in Novosibirsk, Russia (top).*
+
+Yet, the existence of these live variola stocks should not have persisted till today. At the 49th World Health Assembly in 1996, WHO member states resolved to destroy these final stocks of smallpox once and for all in June 1999. Then, it was postponed to June 2002. It is now 2017, yet the variola still exists in these two facilities because of the United States and Russia’s reluctance to destroy it. However, what could possibly motivate a country to preserve this deadly microorganism with such a ghastly history?
+
+### Research: Essential or Pointless?
+
+The most common and significant argument the pro-retentionist camp presents is that live smallpox viruses are extremely useful for specific research purposes. This  was why the WHO decided to grant the variola a stay of execution back in 2002 in the first place. The WHO was provided further evidence in 2013 of the progress with research projects regarding the development of diagnostic tests, animal models, more advanced smallpox vaccines, as well as antiviral and therapeutic agents. In fact, based on the smallpox samples, pharmaceutical companies have been able to develop two major antiviral drugs in their advanced stages. The first one, tecovirimat, was developed to specifically target the family of the smallpox virus (orthopoxviruses), hence allowing countries to stockpile such a drug in case of future smallpox outbreaks. The second drug, brincidofovir, is a more broad-spectrum agent which targets not only orthopoxviruses, but also other groups of viruses such as Ebola virus. It is common knowledge that only recently, an epidemic of Ebola virus disease occurred in West Africa. Drugs developed using the smallpox stocks such as brincidofovir might play a role in curbing epidemics caused by similar viruses, perhaps justifying the preservation of the variola virus.
+
+However, the anti-retentionist camp opines that live stocks of smallpox virus have outlived their usefulness, and little further meaningful insight can be gained from studying them. The key idea they would put forth is that the development of tecovirimat and brincidofovir has reached “advanced stages”, because anti-retentionists strongly believe that research on variola has reached its limit. The WHO Advisory Committee on Variola Virus Research concluded in 2006 that since sufficient sequence information on the virus was available, no further research necessitating access to live variola samples was necessary. ‘Sequence information’ refers to the genetic code or genome of the virus, which was published decades ago in 1994. As a matter of fact, in 1990, the U.S. Secretary for Health and Human Services declared that after the smallpox genome was sequenced, the United States would destroy all remaining variola stocks. 27 years later, the United States has yet to fulfil its promise.
+
+The same advisory committee also concluded that the diagnostic tests and measures to combat variola were more than sufficient. Antiviral drugs and vaccines had already been developed adequately with the help of the smallpox stocks. Hence they concluded that no further development possible with the use of live variola. In fact, another orthopoxvirus, the monkeypox virus, might be used as a substitute for the more dangerous variola virus if further tests are necessary. Hence, the current funding being channelled into smallpox research could arguably be diverted to more pertinent health issues such as research into treatments for HIV / AIDS, cancer, and MERS-CoV.
+
+### The Threat of Variola Traces: A Tool for Terrorism?
+
+The pro-retentionist faction’s next argument is that pockets of live virus around the world almost definitely still exist. After all, completely eliminating a particle that is so minuscule from the vast planet would be quite ambitious and unfeasible. These pockets of live virus might exist both naturally and in man-made facilities, and if misused or placed into the wrong hands, could lead to catastrophic consequences.
+
+​
+
+The pro-retentionists bring up history to add weight to this theory — near the end of the 19th century, a major outbreak of smallpox occurred in Siberia, with corpses being buried under the upper permafrost of the Kolyma River. Due to global warming, temperatures are continuing to rise. This causes the permafrost to melt rapidly, speeding up the erosion of the riverbanks where the smallpox-ridden corpses were buried. Scarily enough, some bodies covered with what look like smallpox marks have been uncovered recently. The nearest biotechnology centre sent experts to test these bodies. While they did not find live variola in the bodies, they did find fragments of variola DNA. Thus, it could very well be that a few live smallpox viruses still lie buried beneath the permafrost, waiting to strike again.
+
+![](../static/img/test_article/caption4.jpg)
+*Craters in Siberian permafrost caused by rapid melting*
+
+However, pro-retentionists consider the more alarming source of these pockets of virus to be in man-made facilities. On July 1 2014, the U.S. National Institute of Health (NIH) reported a discovery of vials labelled ‘variola’ allegedly dating from the 1950s in an old laboratory storeroom. After they were promptly transferred to the U.S. BSL-4 facility and subjected to numerous tests, it was confirmed that these vials contained live, infectious smallpox virus. The viruses were autoclaved (exposed to a high temperature to ensure death of all biological matter) a few months after, on February 24 2015. Many considered it lucky that such a sensitive biohazard was handled in the correct manner. After all, so many things could have gone wrong — what if these vials had been acquired by a terrorist organisation? Using variola as biological warfare would doubtlessly be absolutely devastating, especially in less developed countries. In fact, who’s to say that such bundles of vials do not already exist in some abandoned area of other facilities worldwide, ready to be misused?
+
+
+
+Moreover, with technology developing by leaps and bounds every day, pro-retentionists claim that it has actually become possible to artificially recreate a deadlier version of this virus in laboratory conditions, such that it serves as a more effective bioweapon. In 2014, scientists at the University of Wisconsin-Madison successfully engineered a lethal virus that closely resembled the devastating Spanish Flu virus by piecing together fragments of wild bird flu viruses, sparking an outcry and an onslaught of condemnation. It is hence entirely possible for an artificial variola virus to be created and weaponised for terrorist purposes, especially since the smallpox genome is so readily available online. A simple Google search allows anyone to view the exact base sequence of the variola genome on the NIH website.
+
+​
+
+With this possible bioterrorism threat looming, pro-retentionists see it as all the more important for existing stocks of variola to exist, as this provides the opportunity for research that could prove important in a future outbreak, perhaps by a mutated version of variola. On the other hand, anti-retentionists do not think that the threat of bioterrorism is as pressing as it has been cracked up to be. The U.S. and Russia have often brought up the threat that pockets of variola poses to justify their retention of the virus, but the question anti-retentionists ask strikes at the root of this whole premise: are the variola stocks even necessary anymore to combat a smallpox outbreak, be it bioterrorist in nature or not? The U.S. and Russia have held onto these stocks for more than thirty years — what more could they glean from studying, breaking apart, and infecting other animals with smallpox? The U.S. has adequate smallpox vaccines and antiviral drug stocks to defend their entire population.
+
+### International Implications: What are the Implications?
+
+If anything, anti-retentionists argue that American and Russian insistence on retention of their variola stocks have had some grave implications on international relations. Initially, countries with smallpox stocks had handed them over to the U.S. or Russia with the expectation that these stocks would be destroyed. Decades later, however, this promise has not been kept. What would these countries assume about the intentions behind this decision? Would it not be justified for them to suspect that the two aforementioned countries possess an ulterior motive — perhaps one of a military nature? Should they feel threatened by the imbalance of power that variola possession inevitably causes — that the U.S. and Russia possess a deadly virus as well as the ability to produce antiviral drugs and vaccines for American and Russian citizens, while other countries are left mostly defenceless without live samples to experiment on?
+
+
+
+The most defenceless countries of all, with the most of all to lose, are the African countries. While the developed European and North American countries might have long forgotten what it is like to have a plague, the African countries still experience them. One does not need to look very much into the past to understand the death and destruction the Ebola virus has wreaked upon West Africa. Even historically, African countries were the most disproportionately affected by the smallpox pandemic. Hence, African countries have begun exerting pressure on the U.S. and Russia at the World Health Assembly in order to expedite the final extermination of the variola virus, with the Intergovernmental Working Group on Smallpox Eradication first convening on April 5 2006. The 46 countries in the African Regional Group made several demands, which included withdrawing WHO approval to work with live variola virus, setting a new deadline to destroy the virus stocks at the CDC and the Vector Institute by June 30, 2010, and ensuring that all WHO member states had access to the benefits of smallpox research. Nevertheless, the U.S. and Russia rejected most of the African proposals, and several sections of the draft resolution were set off in square brackets to indicate the lack of consensus support.
+
+### You Never Know - The risk is too high anyway
+
+Finally, the most basic argument that anti-retentionists have proffered is: anything could happen. A safety leak could occur at the facility, or the facility could be attacked by terrorists, or an employee might be negligent. Why take the risk? Exterminating the remaining stocks once and for all would eliminate such a risk. As for the threat that external pockets of virus might pose, the world would face that threat on an equal footing. Scientists and researchers have developed so many drugs and vaccines using the variola virus, and there would surely be sufficient to nip any outbreak in the bud. The WHO managed to exterminate the virus once; now, with better technology, the world can undoubtedly do it again, and do it better.
+
+### So, What's Next?
+
+Ultimately, both the anti-retentionist and pro-retentionist sides raise equally valid and sound points. It is no easy task to reconcile such incompatible viewpoints, which is exactly why this controversy has continued to rage on for so many decades. Do the risks outweigh the benefits? Should smallpox be sentenced to the autoclave? No one has the right answer. However, one sure thing is that it is time for countries, both with and without variola stocks, to consider the full implications of retention and destruction on the world as a whole, rather than focusing on their own national interests. Being divided is not going to get us anywhere - what is most important is that we face this scourge as a united front. Every place on Earth was once terrorised by smallpox. That just means every country has a stake in this matter. There are very few things that the entire world can agree upon, but I think the entire world can agree that together, we can ensure that smallpox, or any other disease for that matter, never threatens us again.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+    </div>
+    <section class="fdb-block pt-3 author-info">
+        <div class="container author-info">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-2"></div>
+                <div class="col-3 mt-4 mt-md-0 ml-auto mr-0 mr-md-0 author-container">
+                    <img alt="image" class="img-fluid author" src="../static/img/nishant.jpeg"/>
+                </div>
+                <div class="col-5">
+                    <p class="text-h3"><strong>Nishant Seth</strong>&nbsp; &nbsp;&nbsp;<em>Writer</em></p>
+                    <small>
+                        Despite being loyal to the sciences his entire academic journey (for shame, for shame), Nishant harbours a Dirty Secret. He has always had an inexplicable attachment to the humanities and in particular, literature (which is manifested in his bad habit of attending Model United Nations conferences as well as devouring books). Writing for The Timeless Compass hence allows him to further pursue his interest in the humanities, while aspiring towards a career in medicine. When he is not having an existential / quarter-life crisis, he enjoys inane activities such as sleeping and listening to trashy music.
+
+                        Contact: nishantrvps@gmail.com
+                    </small>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="fdb-block footer-small bg-dark">
+        <div class="container">
+            <div class="row text-center pb-0">
+                <div class="col">
+                    <p class="mb-0">&copy; 2017 The Timeless Compass. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

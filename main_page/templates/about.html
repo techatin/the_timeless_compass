@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/theme.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/custom.css" /> -->
+    <!-- Compass by Optimus Prime from the Noun Project -->
+    <link type="text/css" rel="stylesheet" href="../static/css/froala_blocks.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/try.js"></script>
+    <script type="text/javascript" src="../static/js/Markdown.Converter.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+
+        $(document).ready(function() {
+            var txt = $("#markdown").html();
+            var converter = new Markdown.Converter();
+            var htmlContent = converter.makeHtml(txt);
+            $('#markdown').html(htmlContent);
+            console.log("Success");
+        })
+    </script>
+
+    <style>
+        .col-fill-8 {
+            width: 66%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        img + em{
+            font-size: 0.8em;
+            display: block;
+            text-align: center;
+        }
+
+        #markdown img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 70%;
+        }
+
+        .navbar-toggler i {
+            color: #EEEEEE;
+        }
+
+        .author {
+            height: 10em;
+        }
+
+        .author-container {
+            margin-right: 0;
+        }
+
+        .author-info {
+            border: 1em;
+            border-color: #999999;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            background-color: #343a40;
+            // border-radius: 0.5em;
+        }
+
+        .dropdown-menu-item {
+            margin-left: 1em;
+            margin-right: 1em;
+            margin-bottom: 1em;
+        }
+
+        .dropdown-menu-item a:hover {
+            text-decoration: none;
+        }
+
+        .dropdown a{
+            color: #f9f9f9 !important;
+        }
+
+        /*.navbar-brand {
+            max-width: 50%;
+        }
+
+        .navbar-brand img {
+            max-width: 100%;
+            height: auto;
+        }*/
+    </style>
+</head>
+<body>
+    <header class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="https://www.froala.com">
+                    <img src="../static/img/ttc2.png" height="50" alt="The Timeless Compass">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav3">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <a id="categories" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-item">
+                                <a href="#">Politics and Current Affairs</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Lifestyle</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Pop Culture</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Literature and Philosophy</a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#">Regions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="fdb-block team-2">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-8">
+                    <h1>Our Crew</h1>
+                </div>
+            </div>
+
+            <div class="row-50"></div>
+
+            <div class="row text-center justify-content-center">
+                <div class="col-sm-3 m-sm-auto">
+                    <img alt="image" class="img-fluid" src="../static/img/crew/ashley.jpg">
+
+                    <h2>Ashley Tan</h2>
+                    <p>Cofounder/Editor-in-Chief</p>
+                </div>
+
+                <div class="col-sm-3 m-sm-auto">
+                    <img alt="image" class="img-fluid" src="../static/img/crew/xy.jpg">
+
+                    <h2>Neo Xiu Yang</h2>
+                    <p>Cofounder/CSO/Writer</p>
+                </div>
+
+                <div class="col-sm-3 m-sm-auto">
+                    <img alt="image" class="img-fluid" src="../static/img/crew/nicole.jpeg">
+
+                    <h2>Nicole Lim</h2>
+                    <p>Cofounder/CTO/Writer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fdb-block team-2 pt-2">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-8">
+                    <h1>Editors</h1>
+                </div>
+            </div>
+
+            <div class="row-50"></div>
+            <div class="row text-center justify-content-center">
+                <div class="col-sm-3 m-sm-auto">
+                    <img alt="image" class="img-fluid" src="../static/img/editor/angus.jpg">
+
+                    <h2>Angus Yip</h2>
+                    <p>Editor/Writer</p>
+                </div>
+
+                <div class="col-sm-3 m-sm-auto">
+                    <img alt="image" class="img-fluid" src="../static/img/editor/calista.jpg">
+
+                    <h2>Calista Chong</h2>
+                    <p>Editor/Writer</p>
+                </div>
+
+                <div class="col-sm-3 m-sm-auto">
+                    <img alt="image" class="img-fluid" src="../static/img/editor/zara.jpg">
+
+                    <h2>Zara Karimi</h2>
+                    <p>Editor/Writer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fdb-block team-3 pt-0">
+    <div class="container">
+      <div class="row text-center justify-content-center">
+        <div class="col-8">
+          <h1>Writers</h1>
+        </div>
+      </div>
+
+      <div class="row-70"></div>
+
+      <div class="row text-center justify-content-center">
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/grace.jpeg">
+
+          <h3><strong>Grace Lau</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/isabel.jpg">
+
+          <h3><strong>Isabel Toh</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/ty.jpg">
+
+          <h3><strong>Luo Tian You</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/morris.jpg">
+
+          <h3><strong>Morris Yang</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/nishant.jpeg">
+
+          <h3><strong>Nishant Seth</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/sophie.jpg">
+
+          <h3><strong>Sophie Low</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+
+        <div class="col-sm-2 m-sm-auto">
+          <img alt="image" class="img-fluid" src="../static/img/writer/surya.jpg">
+
+          <h3><strong>Surya Vurma</strong></h3>
+          <p><em>Writer</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

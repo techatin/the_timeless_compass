@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "ONEDAY";
+    src: url("../../static/css/fonts/ONEDAY.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "aqua";
+    src: url("../../static/css/fonts/aqua.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "GeoSans";
+    src: url("../../static/css/fonts/GeoSansLight.ttf") format("truetype");
+}
+
+.navbar-dark {
+    background-color: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    background-color: #151515;
+    color: #FFFFFF;
+}
+
+.navbar {
+    background-color: #000000;
+    margin-top: 0px;
+    border: 0px;
+    margin: 0px !important;
+    vertical-align: top;
+    top: 0;
+}
+
+.navbar-brand {
+    font-family: "Lobster", cursive;
+    vertical-align: middle;
+}
+
+.navbar-default {
+    margin: 0 !important;
+}
+
+.bg-primary {
+    background-color: #0a0a0a !important;
+}
+
+#headline {
+    border-top: 0;
+    vertical-align: top;
+    line-height: 0;
+    /* height: 70%; */
+    color: #ffffff;
+    word-wrap: normal;
+}
+
+img {
+    min-height: 70%;
+    width: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.carousel-control-prev {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 5em;
+    height: 5em;
+    margin: auto;
+    border-radius: 50%;
+    margin-left: 1em;
+}
+
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 5em;
+    height: 5em;
+    margin: auto;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.wrapper {
+    border-radius: 0.5em;
+    margin: 0;
+}
+
+#categories {
+    border-radius: 0.5em;
+}
+
+#categories:hover {
+    background-color: #222222;
+}
+
+.wrapper:hover {
+    background-color: #222222;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-item .nav-link {
+    color: #ffffff !important;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #000000;
+    border-radius: 0.5em;
+}
+
+.dropdown {
+    color: #000000;
+}
+
+.wrapper1 {
+    border-radius: 0%;
+    background-color: #0000000;
+}
+
+.wrapper1:hover {
+    background-color: #222222;
+}
+
+#headline .row {
+    // margin-bottom: 0.5em;
+}
+
+.thumbnail {
+    position: relative;
+    line-height: 2em;
+    box-shadow: 3em;
+    min-height: 20em;
+    display: block;
+    overflow: hidden;
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+}
+
+.thumbnail > a > img {
+    // z-index: -1;
+    filter: brightness(95%);
+    display: block;
+    width: 100%;
+    height: 20em;
+    max-width: none;
+    object-fit: cover;
+}
+.caption {
+    position: relative;
+    align-items center;
+    margin: auto;
+    width: 80%;
+    overflow: auto;
+    padding-top: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+}
+
+.caption > p {
+    height: 35%;
+    margin-bottom: 0;
+}
+
+.btn-secondary {
+    background-color: #333333;
+}
+
+#headline .row {
+    min-height: 10em;
+    margin-bottom: 0.5em;
+    display: flex;
+}
+
+#featured .row {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.card {
+    background-color: #222222;
+    padding-bottom: 2em;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1em;
+    min-height: 20em;
+    max-height: 40em;
+    object-fit: cover;
+    // overflow: hidden;
+}
+
+.card-img-top {
+    height: 15em;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+    object-fit: cover;
+}
+
+.card-body {
+    min-height: 10em;
+}
+
+.small {
+    line-height: 1;
+}
+
+.img-thumbnail {
+    filter: grayscale(20%);
+}
+
+.img-thumbnail:hover {
+    filter: none;
+}
+
+@media only screen and (max-width : 768px) {
+    .card {
+        min-height: none;
+        max-height: none;
+        overflow-y: hidden;
+    }
+
+    #copyright {
+        text-align: left !important;
+    }
+
+    .footer {
+        line-height: 1em !important;
+    }
+}
+
+.footer {
+    margin-top: 5em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    min-height: 5em;
+    line-height: 70px; /* Vertically center the text there */
+    background-color: #000000;
+    word-wrap:break-word;
+}

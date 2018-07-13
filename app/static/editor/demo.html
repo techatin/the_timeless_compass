@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/editormd.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="editormd.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    $(function() {
+        var editor = editormd("editormd", {
+            path : "lib/", // Autoload modules mode, codemirror, marked... dependents libs path
+            // lang: "en-uk"
+        });
+
+        /*
+        // or
+        var editor = editormd({
+            id   : "editormd",
+            path : "../lib/"
+        });
+        */
+    });
+    </script>
+    <input id="editormd">
+        <textarea style="">### Hello Editor.md !</textarea>
+    </input>
+</body>

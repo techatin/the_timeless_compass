@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="container mt-10">
+    <div class="row justify-content-center">
+        <div class="col-6 justify-content-center">
+            <div class="card">
+                <div class="card-header mt-10">New User</div>
+                <div class="card-body">
+                    <form action="" method="post" name="login" class="form-group col-md-8 col-md-offset-2">
+                        <fieldset>
+                            {{ form.hidden_tag() }} {{ form.username(size=80, class="main-form form-control mb-1", placeholder="Username") }} {{ form.password(class="main-form form-control mb-1", placeholder="Password") }} {{ form.confirm(class="main-form form-control mb-1", placeholder="Confirm Password") }} {{ form.permission(class="main-form form-control mb-1", placeholder="User type") }}
+                            <p><input type="submit" value="Submit" class="btn btn-primary"></p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
